@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --font-cyber: 'Share Tech Mono', monospace;
+  --font-display: 'Outfit', sans-serif;
+
+  /* Cybersecurity Theme Palette */
+  --color-cyber-bg-darker: #020617;
+  --color-cyber-bg-dark: #070d1e;
+  --color-cyber-bg-card: rgba(13, 22, 47, 0.45);
+  --color-cyber-blue: #0ea5e9;
+  --color-cyber-blue-glow: rgba(14, 165, 233, 0.15);
+  
+  --color-cyber-green: #10b981;
+  --color-cyber-green-glow: rgba(16, 185, 129, 0.15);
+  
+  --color-cyber-yellow: #f59e0b;
+  --color-cyber-yellow-glow: rgba(245, 158, 11, 0.15);
+  
+  --color-cyber-orange: #f97316;
+  --color-cyber-orange-glow: rgba(249, 115, 22, 0.15);
+  
+  --color-cyber-red: #ef4444;
+  --color-cyber-red-glow: rgba(239, 68, 68, 0.15);
+  
+  --color-cyber-border: rgba(255, 255, 255, 0.05);
+  --color-cyber-border-active: rgba(14, 165, 233, 0.3);
+  
+  --shadow-cyber: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+  --shadow-cyber-blue: 0 0 15px rgba(14, 165, 233, 0.25);
+  --shadow-cyber-red: 0 0 15px rgba(239, 68, 68, 0.25);
+  --shadow-cyber-green: 0 0 15px rgba(16, 185, 129, 0.25);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cyber-bg-darker);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(15, 23, 42, 0.9) 0, transparent 50%),
+    radial-gradient(at 50% 0%, rgba(13, 22, 47, 0.4) 0, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(15, 23, 42, 0.8) 0, transparent 50%);
+  color: #f8fafc;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Glassmorphic Panel Styles */
+.cyber-glass {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: var(--color-cyber-bg-card);
+  border: 1px solid var(--color-cyber-border);
+  box-shadow: var(--shadow-cyber);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cyber-glass:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.8);
+}
+
+.cyber-glass-active {
+  border-color: var(--color-cyber-border-active);
+  box-shadow: var(--shadow-cyber-blue);
+}
+
+/* Glow Borders */
+.border-glow-blue { border-color: var(--color-cyber-blue); box-shadow: var(--shadow-cyber-blue); }
+.border-glow-green { border-color: var(--color-cyber-green); box-shadow: var(--shadow-cyber-green); }
+.border-glow-yellow { border-color: var(--color-cyber-yellow); box-shadow: 0 0 15px rgba(245, 158, 11, 0.25); }
+.border-glow-orange { border-color: var(--color-cyber-orange); box-shadow: 0 0 15px rgba(249, 115, 22, 0.25); }
+.border-glow-red { border-color: var(--color-cyber-red); box-shadow: var(--shadow-cyber-red); }
+
+/* Custom Scrollbar for cyber theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(2, 6, 23, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-cyber-blue);
+  box-shadow: var(--shadow-cyber-blue);
+}
+
+/* Matrix scanning animations */
+@keyframes cyberScan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.cyber-scanner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, rgba(14, 165, 233, 0.05) 50%, transparent);
+  animation: cyberScan 4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes pulseOpacity {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+.pulse-led {
+  animation: pulseOpacity 1.5s infinite ease-in-out;
+}
+
+/* Grid overlay background */
+.cyber-grid-overlay {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+}

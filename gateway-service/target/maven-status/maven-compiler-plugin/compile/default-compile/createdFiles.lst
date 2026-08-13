@@ -1,0 +1,2 @@
+com\cyber\gateway\filter\JwtAuthenticationFilter.class
+com\cyber\gateway\GatewayApplication.class
