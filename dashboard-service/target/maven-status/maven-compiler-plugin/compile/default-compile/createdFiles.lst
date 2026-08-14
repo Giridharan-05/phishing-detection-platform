@@ -1,7 +1,0 @@
-com\cyber\dashboard\dto\TopThreatDto.class
-com\cyber\dashboard\config\OpenApiConfig.class
-com\cyber\dashboard\dto\DashboardSummaryDto.class
-com\cyber\dashboard\dto\DashboardSummaryDto$DashboardSummaryDtoBuilder.class
-com\cyber\dashboard\controller\DashboardController.class
-com\cyber\dashboard\DashboardServiceApplication.class
-com\cyber\dashboard\dto\TopDomainDto.class
